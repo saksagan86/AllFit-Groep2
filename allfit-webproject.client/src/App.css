@@ -4,7 +4,7 @@ body {
 }
 
 .navbar {
-  background-color: #ffffff;
+  background-color: #3DC2C7;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #f3e5d3;
+  background-color: #FF8971;
 }
 
 .nav-link.active {
