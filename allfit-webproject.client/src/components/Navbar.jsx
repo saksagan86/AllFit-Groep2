@@ -29,6 +29,9 @@ function Navbar() {
           <NavLink to="/" end className={getLinkClass} onClick={closeMenu}>
             Home
           </NavLink>
+          <NavLink to="/locaties" className={getLinkClass} onClick={closeMenu}>
+            Locaties
+          </NavLink>
           <NavLink to="/aanbod" className={getLinkClass} onClick={closeMenu}>
             Aanbod
           </NavLink>
