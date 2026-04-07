@@ -1,6 +1,4 @@
 import { useState } from 'react';
-
-
 function ScrollBlock({ items }) {
     const [index, setIndex] = useState(0);
 
@@ -23,15 +21,17 @@ function ScrollBlock({ items }) {
     return (
         <div>
             {item}
-            <button onClick={handlePrev}>
-                Previous
-            </button>
-            <h3>
-                ({index + 1} of {items.length})
-            </h3>
-            <button onClick={handleNext}>
-                Next
-            </button>
+            <div class='scroll-bar'>
+                <button onClick={handlePrev}>
+                    Previous
+                </button>
+                <p>
+                    {index + 1} / {items.length}
+                </p>
+                <button onClick={handleNext}>
+                    Next
+                </button>
+            </div>
         </div>
 
   );

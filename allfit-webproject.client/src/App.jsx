@@ -7,7 +7,10 @@ import './App.css'
 
 function App() {
     return (
-        <HomePage></HomePage>
+        <div>
+            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet"></link>
+            <HomePage></HomePage>
+        </div>
   )
 }
 
