@@ -3,8 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
 
-import InfoBlock from './assets/infoBlock.jsx'
-import HomePage from './HomePage.jsx'
+import HomePage from './Pages/HomePage.jsx'
 import Navbar from './components/Navbar.jsx'
 import AanbodPage from './pages/AanbodPage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
@@ -17,9 +16,8 @@ function App() {
     return (
         <div>
             <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet"></link>
-            <
             <Navbar />
-            Routes>
+            <Routes>
                 <Route path="/" element={<HomePage />} />
                     <Route path="/aanbod" element={<AanbodPage />} />
                     <Route path="/locaties" element={<LocatiesPage />} />
