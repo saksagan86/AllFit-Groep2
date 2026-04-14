@@ -1,4 +1,4 @@
-import LocationCard from '../components/LocationCard'
+import LocationCard from '../Components/LocationCard'
 import locations from '../data/locations'
 import LocationsMap from "../Components/LocationsMap";
 
