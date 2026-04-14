@@ -1,5 +1,7 @@
 import LocationCard from '../components/LocationCard'
 import locations from '../data/locations'
+import LocationsMap from "../Components/LocationsMap";
+
 
 function LocatiesPage() {
     return (
@@ -17,6 +19,8 @@ function LocatiesPage() {
                     <LocationCard key={location.id} location={location} />
                 ))}
             </section>
+            <LocationsMap></LocationsMap>
+
         </main>
     )
 }

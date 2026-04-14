@@ -5,6 +5,8 @@ import AanbodOverzicht from "../Components/AanbodOverzicht";
 import LocationCard from "../Components/LocationCard";
 import LocatiesPage from "./LocatiesPage";
 import LocationsMap from "../Components/LocationsMap";
+import locations from '../data/locations'
+
 function HomePage() {
     const allFitInfo = [
         <InfoBlock title="Over AllFit" description="Allfit is een inclusieve sportschool waar community centraal staat!" foto_url="https://cdn.pixabay.com/photo/2022/06/29/13/31/power-club-7291776_1280.jpg" ></InfoBlock >,
@@ -13,14 +15,17 @@ function HomePage() {
     ];
 
     return (
-        <div>
+        <main className="page-content">
             <ScrollBlock
                 items={allFitInfo}></ScrollBlock>
-            <LocatiesPage></LocatiesPage>
-            <LocationsMap></LocationsMap>
+            <section className="locations-grid">
+                {locations.map((location) => (
+                    <LocationCard key={location.id} location={location} />
+                ))}
+            </section>
             <AanbodOverzicht></AanbodOverzicht>
             {/*<Lidmaatschappen></Lidmaatschappen>*/}
-        </div>
+        </main>
   );
 }
 
