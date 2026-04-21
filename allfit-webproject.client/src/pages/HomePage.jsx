@@ -7,7 +7,6 @@ import locations from '../data/locations';
 import LidmaatschapOverzicht from "../Components/LidmaatschapOverzicht"
 import LocatiesPage from "./LocatiesPage";
 import LocationsMap from "../Components/LocationsMap";
-import locations from '../data/locations'
 
 function HomePage() {
     const allFitInfo = [
@@ -17,7 +16,7 @@ function HomePage() {
     ];
 
     return (
-        <main className="page-content">
+        <main>
             <ScrollBlock
                 items={allFitInfo}></ScrollBlock>
             <section className="locations-grid">
@@ -25,10 +24,7 @@ function HomePage() {
                     <LocationCard key={location.id} location={location} />
                 ))}
             </section>
-            <AanbodOverzicht></AanbodOverzicht>
             <LidmaatschapOverzicht></LidmaatschapOverzicht>
-        </div>
-            {/*<Lidmaatschappen></Lidmaatschappen>*/}
         </main>
   );
 }
