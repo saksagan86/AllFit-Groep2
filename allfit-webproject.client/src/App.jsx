@@ -27,7 +27,7 @@ function App() {
       />
 
       <Navbar />
-
+      <div className="page-content">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/locaties" element={<LocatiesPage />} />
@@ -45,7 +45,8 @@ function App() {
           }
         />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+              </Routes>
+          </div>
     </div>
   );
 }
