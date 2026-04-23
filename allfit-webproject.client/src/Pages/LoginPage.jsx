@@ -49,7 +49,7 @@ function LoginPage() {
         return res.json();
       })
       .then((data) => {
-        // data should contain { token, user }
+        // data moet hebben { token, user }
         login({ token: data.token, user: { name: data.user.name, email: data.user.email } });
         navigate(from, { replace: true });
       })
@@ -101,10 +101,6 @@ function LoginPage() {
             Inloggen
           </button>
         </form>
-
-        <p className="auth-note">
-          Dit is nog de voorbereiding.
-        </p>
       </section>
     </main>
   );

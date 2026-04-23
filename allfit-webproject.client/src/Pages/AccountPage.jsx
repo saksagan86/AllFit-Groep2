@@ -16,14 +16,7 @@ function AccountPage() {
           <p>
             <strong>E-mailadres:</strong> {user?.email || 'Onbekend'}
           </p>
-          <p>
-            <strong>Rol:</strong> {user?.role || 'Onbekend'}
-          </p>
         </div>
-
-        <p className="auth-note">
-          Deze pagina is nu nog een placeholder.
-        </p>
       </section>
     </main>
   );
