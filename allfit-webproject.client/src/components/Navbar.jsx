@@ -1,22 +1,24 @@
-import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext.jsx';
+import { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { isAuthenticated, logout } = useAuth();
-  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false)
+  const { isAuthenticated, logout } = useAuth()
+  const navigate = useNavigate()
 
   const closeMenu = () => setIsOpen(false);
 
   const getLinkClass = ({ isActive }) =>
-    isActive ? 'nav-link active' : 'nav-link';
+        isActive ? 'nav-link active' : 'nav-link'
 
   const handleLogout = () => {
-    logout();
-    closeMenu();
-    navigate('/');
-  };
+      logout();
+      closeMenu();
+      navigate('/');
+  }
+
+
 
   return (
     <header className="navbar">
@@ -61,7 +63,11 @@ function Navbar() {
                 Account
               </NavLink>
 
-              <button type="button" className="nav-link logout-button" onClick={handleLogout}>
+              <button
+                type="button"
+                className="nav-link logout-button"
+                onClick={handleLogout}
+              >
                 Uitloggen
               </button>
             </>
@@ -69,7 +75,7 @@ function Navbar() {
         </nav>
       </div>
     </header>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

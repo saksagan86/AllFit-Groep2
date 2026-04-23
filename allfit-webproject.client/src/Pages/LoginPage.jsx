@@ -30,21 +30,32 @@ function LoginPage() {
     setError('');
 
     // Nep frotnend-validatie.
-    if (!formData.email || !formData.password) {
-      setError('Vul zowel e-mailadres als wachtwoord in.');
-      return;
-    }
+    //if (!formData.email || !formData.password) {
+    //  setError('Vul zowel e-mailadres als wachtwoord in.');
+    //  return;
+    //}
 
-    login({
-      token: 'temporary-step-1-token',
-      user: {
-        name: 'Test Gebruiker',
-        email: formData.email,
-        role: 'Member',
-      },
-    });
-
-    navigate(from, { replace: true });
+    // Call server login endpoint
+    fetch('/api/account/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: formData.email, password: formData.password }),
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(text || 'Login failed');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        // data should contain { token, user }
+        login({ token: data.token, user: { name: data.user.name, email: data.user.email } });
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err.message || 'Onbekende fout bij inloggen');
+      });
   };
 
   return (
